@@ -1,6 +1,8 @@
-# IP-Sat
+# IP-Sat model
 
-This is a code(for C++, C, Fortran) which calculate DGLAP-evolved IP-Sat dipole amplitude. Please cite the following paper if you use the code: A. H. Rezaeian, M. Siddikov, M. Van de Klundert, R. Venugopalan, Phys.Rev.D87:034002,2013 [arXiv:1212.2974]. 
+This code (self-contained) calculate DGLAP-evolved IP-Sat dipole amplitude. Please cite the following paper if you use the code: 
+A. H. Rezaeian, M. Siddikov, M. Van de Klundert, R. Venugopalan, Phys.Rev.D87:034002,2013 [arXiv:1212.2974]. 
+The details of the computation can be found here: https://arxiv.org/abs/1212.2974
  
 
 The package is self-contained and incorporates QCDNUM code (without quarks in evolution) for the DGLAP evolution. 
@@ -8,18 +10,20 @@ ______________________________________
 How to generate library (Brief instructions what you need to do): 
 ______________________________________
 
-1) unpack IP-Sat.tar.gz
-tar -xvzf  IP-Sat.tar.gz
+1) unpack IP-Sat.tar.gz 
 
+tar -xvzf  IP-Sat.tar.gz
+ 
+ Or just fork libColorDipole. 
  
 2) cd to main directory "libColorDipole" and then do the following "make TEST_DIPOLE FC=gfortran", 
 Note if you have f77 or g77 instead of gfortran, then in the above command replace FC=gfortran with FC=f77 or FC=g77. 
 
-3) now after the above, you will generate all the libraries. Grab the files src/Test_Dipole.f and libraries/libColorDipole.a and copy them in any directory that you like, and compile them:
+3) After the above step, you will generate all the libraries. Grab the files src/Test_Dipole.f and libraries/libColorDipole.a and copy them in any directory that you like, and compile them:
  
 gfortran Test_Dipole.f libColorDipole.a -o run.exe
 
-4) now you can run: 
+4) Now you can run: 
 ./run.exe
 ---------------------------------------
 Note that in directory libraries/, files libColorDipole.so [dynamic] and libColorDipole.a [static].
